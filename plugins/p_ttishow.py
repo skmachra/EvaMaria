@@ -53,7 +53,12 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
+             #   temp.MELCOW['welcome'] = await message.reply(f"<b>Hey , {u.mention}, Welcome to {message.chat.title}</b>")
+                temp.MELCOW['welcome'] = await message.reply_video(
+                video="https://telegra.ph/file/03691465baa774e46506d.mp4",                                               
+                                                 caption=f'<b>Hey , {u.mention} 👋🏻\nWelcome to our group {message.chat.title}\n\nYou can find movies / series / animes etc. From here. Enjoy😜.',
+                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('➡️Update Channel⬅️', url='http://t.me/SK_Movies1') ] ] )
+                )
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
