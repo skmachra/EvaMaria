@@ -44,7 +44,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+B1Fesigo2xAyNTg1')
+            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+_zbzjL-nCYYzYTk1')
             ],[
             InlineKeyboardButton('❤️Backup Channel❤️', url='https://t.me/moviehub1751')
             ],[
@@ -69,15 +69,11 @@ async def start(client, message):
             logger.error("Make sure Bot is admin in Forcesub channel")
             return
         btn = [
-            
-               # [
-            #    InlineKeyboardButton("🤖 Join Update Channel", url='https://shrinke.me/6gb95B')
-             #   ]          
-          [InlineKeyboardButton(
+          [
+              InlineKeyboardButton(
                   "🤖 Join Updates Channel", url=invite_link.invite_link
-              ) ]
-       
-            
+              )
+          ]
         ]
 
         if message.command[1] != "subscribe":
@@ -89,7 +85,7 @@ async def start(client, message):
                 btn.append([InlineKeyboardButton(" 🔄 Try Again", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
+            text="**𝑱𝒐𝒊𝒏 𝑶𝒖𝒓 𝑴𝒐𝒗𝒊𝒆 𝑼𝒑𝒅𝒂𝒕𝒆𝒔 𝑪𝒉𝒂𝒏𝒏𝒆𝒍 𝑻𝒐 𝑼𝒔𝒆 𝑻𝒉𝒊𝒔 𝑩𝒐𝒕!**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
@@ -98,7 +94,7 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+B1Fesigo2xAyNTg1')
+            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+_zbzjL-nCYYzYTk1')
             ],[
             InlineKeyboardButton('❤️Backup Channel❤️', url='https://t.me/moviehub1751')
             ],[
