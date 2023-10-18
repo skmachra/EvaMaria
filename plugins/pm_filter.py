@@ -75,9 +75,7 @@ async def next_page(bot, query):
         ]
     else:
         btn = [
-        [
-         InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
-        ],
+    
               [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
@@ -101,12 +99,21 @@ async def next_page(bot, query):
         btn.append(
             [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
              InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
-                                  callback_data="pages")]
+                                  callback_data="pages")
+            ],
+             [
+          InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
+             ]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
+        ,
+             [
+          InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
+             ]
+        )
     else:
         btn.append(
             [
@@ -114,6 +121,10 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
+            
+             [
+          InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
+             ]
         )
     try:
         await query.edit_message_reply_markup(
