@@ -88,7 +88,8 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-            btn.insert(0,
+        
+      btn.insert(0,
         [
             InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
         ]
