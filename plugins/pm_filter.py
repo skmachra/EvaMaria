@@ -3,14 +3,15 @@ import asyncio
 import re
 import ast
 import math
-#from utils import get_shortlink
+from utils import get_shortlink
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
+#from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, \
+   # SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
+from info import *
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -67,8 +68,7 @@ async def next_page(bot, query):
               [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
-                   callback_data=f'files#{file.file_id}'
-                    # url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                     url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
             for file in files
@@ -79,17 +79,20 @@ async def next_page(bot, query):
               [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
-                    callback_data=f'files#{file.file_id}'
-                # url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                 url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
-                   callback_data=f'files#{file.file_id}'
-                    # url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                 url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                 ),
             ]
             for file in files
         ]
+            btn.insert(0,
+        [
+            InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
+        ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -414,7 +417,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
-            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+B1Fesigo2xAyNTg1')
+            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+_zbzjL-nCYYzYTk1')
         ], [
             InlineKeyboardButton('❤️Backup Channel❤️', url='https://t.me/moviehub1751')
         ], [
@@ -442,7 +445,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('📈Status', callback_data='stats')
         ], [
-            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+B1Fesigo2xAyNTg1')
+            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+_zbzjL-nCYYzYTk1')
         ], [
             InlineKeyboardButton('❤️Backup Channel❤️', url='https://t.me/moviehub1751')
         ]]
@@ -460,7 +463,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ], [
-            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+B1Fesigo2xAyNTg1')
+            InlineKeyboardButton('🔥Movie Channel🔥', url='https://t.me/+_zbzjL-nCYYzYTk1')
         ], [
             InlineKeyboardButton('❤️Backup Channel❤️', url='https://t.me/moviehub1751')
         ]]
@@ -662,8 +665,7 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}",
-                 callback_data=f'files#{file.file_id}'
-                    # url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                 url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                
                 ),
             ]
@@ -674,19 +676,22 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
-                  callback_data=f'files#{file.file_id}'
-                    # url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                   url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                   callback_data=f'files#{file.file_id}'
-                    #url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
+                   url=await get_shortlink(f"https://telegram.dog/{temp.U_NAME}?start=files_{file.file_id}")
                
                 ),
             ]
             for file in files
         ]
+          btn.insert(0,
+        [
+            InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/SK_Movies1')
+        ]
+    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
