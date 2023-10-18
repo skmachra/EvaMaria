@@ -64,7 +64,6 @@ async def next_page(bot, query):
     settings = await get_settings(query.message.chat.id)
     if settings['button']:
         btn = [
-      
               [
                 InlineKeyboardButton(
                     text=f"[{get_size(file.file_size)}] {file.file_name}", 
@@ -681,9 +680,6 @@ async def auto_filter(client, msg, spoll=False):
         ]
     else:
         btn = [
-             [
-             InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
-            ],
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
