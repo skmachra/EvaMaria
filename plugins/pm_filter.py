@@ -88,6 +88,11 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
+            btn.insert(
+        [
+            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://youtu.be/A6_YkUKgbgo')
+        ]
+    )
 
     if 0 < offset <= 10:
         off_set = 0
@@ -681,11 +686,13 @@ async def auto_filter(client, msg, spoll=False):
                 ),
             ]
             for file in files
-      [
-            InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/SK_Movies1')
         ]
+          btn.insert(
+        [
+            InlineKeyboardButton(text="⚡ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ⚡", url='https://youtu.be/A6_YkUKgbgo')
         ]
-   # )
+    )
+   
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
