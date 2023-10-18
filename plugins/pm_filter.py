@@ -681,11 +681,10 @@ async def auto_filter(client, msg, spoll=False):
                 ),
             ]
             for file in files
+      [
+            InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/SK_Movies1')
         ]
-     #     btn.insert(0,
-     #   [
-      #      InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/SK_Movies1')
-       # ]
+        ]
    # )
 
     if offset != "":
