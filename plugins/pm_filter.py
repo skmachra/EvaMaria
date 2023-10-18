@@ -87,9 +87,6 @@ async def next_page(bot, query):
                 ),
             ]
             for file in files
-         [
-           InlineKeyboardButton(text="⚡How to download⚡", url='https://t.me/moviehub175')
-         ] 
         ]
 
     if 0 < offset <= 10:
